@@ -1,10 +1,19 @@
 <script lang="ts">
-    import Hero from "./(components)/hero.svelte";
+	import SvelteSeo from 'svelte-seo';
+	import { SITE_DATA } from '$lib/global';
+	import Hero from './(components)/hero.svelte';
 
-    const seo = {
-        title: 'South Hills Church of Christ, Helena MT | Love God, Love Others',
-        description: 'South Hills Church of Christ: Helena, MT | A community of faith striving to love God & neighbor. Belong, connect, call home. Love God, Love Others.'
-    }
+	const seo = {
+		title: `${SITE_DATA.name}, ${SITE_DATA.address.city} ${SITE_DATA.address.state} | ${SITE_DATA.slogan}`,
+		description:
+			'A community of faith striving to love God & neighbor. Belong, connect, call home. Love God, Love Others.'
+	};
+
+	const hero = {
+		title: '',
+		subtext: ''
+	};
 </script>
 
+<SvelteSeo {...seo} />
 <Hero />

@@ -94,6 +94,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.6.0
     version: 3.6.7(postcss-load-config@5.0.3)(postcss@8.4.36)(svelte@5.0.0-next.80)
+  svelte-seo:
+    specifier: ^1.6.0
+    version: 1.6.0(typescript@5.4.2)
   tailwindcss:
     specifier: ^3.3.6
     version: 3.4.1
@@ -2611,6 +2614,14 @@ packages:
       rimraf: 2.7.1
     dev: true
 
+  /schema-dts@1.1.2(typescript@5.4.2):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.4.2
+    dev: true
+
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -2883,6 +2894,14 @@ packages:
       strip-indent: 3.0.0
       svelte: 5.0.0-next.80
       typescript: 5.4.2
+    dev: true
+
+  /svelte-seo@1.6.0(typescript@5.4.2):
+    resolution: {integrity: sha512-xgyJ2evRrgukCIOl4EMNrXyKXAQxJVYchqw9iTG1pv143bQ9vnI/wrrI1ew+fOLVRnU7yuJVdvgKUSD+sZXXtg==}
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.4.2)
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /svelte-sonner@0.3.19(svelte@5.0.0-next.80):

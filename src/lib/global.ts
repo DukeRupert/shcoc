@@ -1,12 +1,13 @@
 export interface Church {
 	name: string;
 	short_name: string;
-    slogan: string;
+	slogan: string;
 	address: Address;
 	phone: Phone;
 	email: string;
 	url: string;
 	social: SocialLink[];
+	routes: Route[];
 }
 
 export interface Address {
@@ -30,10 +31,15 @@ export interface SocialLink {
 	url: string;
 }
 
+export interface Route {
+	id: string;
+	url: string;
+}
+
 export const SITE_DATA = {
 	name: 'South Hills Church of Christ',
 	short_name: 'South Hills',
-    slogan: 'Love God, Love Others',
+	slogan: 'Love God, Love Others',
 	address: {
 		address_1: '2294 Deerfield Lane',
 		address_2: '',
@@ -53,5 +59,10 @@ export const SITE_DATA = {
 	social: [
 		{ id: 'facebook', url: 'https://www.facebook.com/groups/101145653368' },
 		{ id: 'youtube', url: 'https://www.youtube.com/channel/UC_5VLJi7bGkXK-FdIFkTMKw' }
+	],
+	routes: [
+		{ id: 'about us', url: '/about-us' },
+		{ id: 'ministries', url: '/ministries' },
+		{ id: 'contact us', url: '/contact-us' }
 	]
 };
