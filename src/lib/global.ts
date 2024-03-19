@@ -63,6 +63,7 @@ export const SITE_DATA = {
 	routes: [
 		{ id: 'about us', url: '/about-us' },
 		{ id: 'ministries', url: '/ministries' },
-		{ id: 'contact us', url: '/contact-us' }
+		{ id: 'contact us', url: '/contact-us' },
+		{ id: 'donate', url: '/donate' }
 	]
 };

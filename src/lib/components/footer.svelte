@@ -1,24 +1,16 @@
-<footer class="bg-white">
+<script lang="ts">
+    import { Button } from '$lib/components/ui/button';
+    import { SITE_DATA } from "$lib/global";
+
+    let current_date = new Date()
+</script>
+
+<footer>
 	<div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
 		<nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">About</a>
-			</div>
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-			</div>
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-			</div>
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Press</a>
-			</div>
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Accessibility</a>
-			</div>
-			<div class="pb-6">
-				<a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Partners</a>
-			</div>
+            {#each SITE_DATA.routes as { id, url }}
+				<Button href={url} variant="link" class="pb-6 capitalize">{id}</Button>
+			{/each}
 		</nav>
 		<div class="mt-10 flex justify-center space-x-10">
 			<a href="#" class="text-gray-400 hover:text-gray-500">
@@ -70,8 +62,8 @@
 				</svg>
 			</a>
 		</div>
-		<p class="mt-10 text-center text-xs leading-5 text-gray-500">
-			&copy; 2020 Your Company, Inc. All rights reserved.
+		<p class="mt-10 text-center text-xs leading-5 text-muted-foreground">
+			&copy; {current_date.getFullYear()} {SITE_DATA.name}. All rights reserved.
 		</p>
 	</div>
 </footer>

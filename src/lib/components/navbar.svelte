@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button';
 	import Lightswitch from './lightswitch.svelte';
+	import { SITE_DATA } from '$lib/global';
 </script>
 
 <header class="absolute inset-x-0 top-0 z-50">
@@ -37,16 +39,12 @@
 			</button>
 		</div>
 		<div class="hidden lg:flex lg:gap-x-12">
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+			{#each SITE_DATA.routes as { id, url }}
+				<Button href={url} variant="link" class="capitalize">{id}</Button>
+			{/each}
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 			<Lightswitch />
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-				>Log in <span aria-hidden="true">&rarr;</span></a
-			>
 		</div>
 	</nav>
 	<!-- Mobile menu, show/hide based on menu open state. -->
