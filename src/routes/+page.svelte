@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import Hero from "./(components)/hero.svelte";
+
+    const seo = {
+        title: 'South Hills Church of Christ, Helena MT | Love God, Love Others',
+        description: 'South Hills Church of Christ: Helena, MT | A community of faith striving to love God & neighbor. Belong, connect, call home. Love God, Love Others.'
+    }
+</script>
+
+<Hero />
