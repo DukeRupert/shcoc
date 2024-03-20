@@ -20,11 +20,11 @@
 		<div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
 			<div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 				<div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-					<h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">{title}</h1>
+					<h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">South Hills Church of Christ: A <span class="bg-clip-text text-transparent box-decoration-clone bg-gradient-to-br from-[#8B5CF6] to-[#9B4745]">Community</span> of Discipleship</h1>
 					<p class="mt-6 text-lg leading-8 text-muted-foreground sm:max-w-md lg:max-w-none">{subtext}</p>
 					<div class="mt-10 flex items-center gap-x-6">
-						<Button href="#" variant="default">Get started</Button>
-						<Button href="#" variant="outline">Live demo</Button>
+						<Button href="/#welcome" variant="default">Learn more</Button>
+						<Button href="/contact-us" variant="outline">Contact us</Button>
 					</div>
 				</div>
 				<div
