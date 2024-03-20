@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CldImage } from 'svelte-cloudinary';
 	import { SITE_DATA } from '$lib/global';
 	import { navigating } from '$app/stores';
 	import { MenuIcon } from 'lucide-svelte';
@@ -20,11 +21,7 @@
 		<div class="flex lg:flex-1">
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">{SITE_DATA.name}</span>
-				<img
-					class="h-8 w-auto"
-					src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-					alt=""
-				/>
+				<CldImage width="40" height="40" src={SITE_DATA.logo.url} sizes="100vw" alt={SITE_DATA.logo.alt} class="object-contain" />
 			</a>
 		</div>
 

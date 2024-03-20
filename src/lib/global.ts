@@ -8,6 +8,7 @@ export interface Church {
 	url: string;
 	social: SocialLink[];
 	routes: Route[];
+	logo: Logo;
 }
 
 export interface Address {
@@ -34,6 +35,11 @@ export interface SocialLink {
 export interface Route {
 	id: string;
 	url: string;
+}
+
+export interface Logo {
+	url: string;
+	alt: string;
 }
 
 export const SITE_DATA = {
@@ -65,5 +71,9 @@ export const SITE_DATA = {
 		{ id: 'ministries', url: '/ministries' },
 		{ id: 'contact us', url: '/contact-us' },
 		{ id: 'donate', url: '/donate' }
-	]
+	],
+	logo: {
+		url: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183597/South%20Hills%20CoC/logo_hdpazk.png",
+		alt: "South Hills Church of Christ logo"
+	}
 };
