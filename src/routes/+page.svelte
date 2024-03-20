@@ -3,6 +3,9 @@
 	import { SITE_DATA } from '$lib/global';
 	import Hero from './(components)/hero.svelte';
 	import Welcome from './(components)/welcome.svelte';
+	import Ministry from './(components)/ministry.svelte';
+	import Faq from './(components)/faq.svelte';
+	import Cta from './(components)/cta.svelte';
 
 	const seo = {
 		title: `${SITE_DATA.name}, ${SITE_DATA.address.city} ${SITE_DATA.address.state} | ${SITE_DATA.slogan}`,
@@ -39,11 +42,28 @@
 		],
 		image: {
 			src: 'https://res.cloudinary.com/rr-wholesale/image/upload/v1710183600/South%20Hills%20CoC/DSC_07771_jjeagk.jpg',
-			alt: 'A moment of fellowship inside the sanctuary at South Hills Church of Christ'
+			alt: 'A moment of fellowship inside the sanctuary at South Hills Church of Christ',
+			width: 2000,
+			height: 1333
 		}
+	};
+
+	const ministry = {
+		content: {
+			title: 'Find Purpose. Change Lives.',
+			primary:
+				"Our diverse ministries offer ways to make a difference locally and globally. Join our community in extending God's love.",
+			subtext: 'Explore opportunities for service, spiritual growth, and connection. We offer ministries for children, local outreach, global missions, and more. Find your place to make a difference.'
+		},
+		images: [
+
+		]
 	};
 </script>
 
 <SvelteSeo {...seo} />
 <Hero {...hero} />
 <Welcome {...welcome} />
+<Ministry {...ministry} />
+<Faq />
+<Cta />

@@ -2,6 +2,8 @@
 	export interface Image {
 		src: string;
 		alt: string;
+		height: number;
+		width: number;
 	}
 
 	export interface Feature {
@@ -61,8 +63,8 @@
 					src={image.src}
 					alt={image.alt}
 					class="w-[48rem] max-w-none rounded-xl object-fill shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-					width="2000"
-					height="1333"
+					width={image.width}
+					height={image.height}
 				/>
 			</div>
 		</div>
