@@ -49,12 +49,13 @@
 							<Sheet.Title>Navigation</Sheet.Title>
 							<Sheet.Description>
 								<q>
-									Ask and it’s given to you, search and you’ll find, knock and the door will open. ~ Matthew 7:7
+									Ask and it’s given to you, search and you’ll find, knock and the door will open. ~
+									Matthew 7:7
 								</q>
 							</Sheet.Description>
 						</Sheet.Header>
-						<div class="mt-6">
-							<Separator class="-my-6" />
+						<Separator class="mt-4"/>
+						<div>
 							<div class="space-y-2 py-6">
 								<Button
 									href="/"
@@ -71,9 +72,11 @@
 									>
 								{/each}
 							</div>
-							<!-- <div class="py-6">
-									<Button variant="default" href={SITE_DATA.online_order_url}>Order online</Button>
-								</div> -->
+							<Separator />
+							<div class="flex flex-col sm:flex-row sm:space-x-6">
+								<Button variant="default" href="/donate" class="w-full mt-4">Donate</Button>
+								<Button variant="secondary" href="/watch" class="w-full mt-4">Watch</Button>
+							</div>
 						</div>
 					</Sheet.Content>
 				</Sheet.Root>
