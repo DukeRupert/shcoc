@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@directus/sdk": "^16.1.0",
 		"bits-ui": "^0.20.0",
 		"clsx": "^2.1.0",
 		"formsnap": "^0.5.1",

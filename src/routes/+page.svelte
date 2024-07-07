@@ -16,7 +16,7 @@
 	const hero = {
 		title: 'South Hills Church of Christ: A Community of Discipleship',
 		subtext:
-			'We believe the church extends beyond our building, shaping our lives and our community. Join us in deepening our faith, strengthening our fellowship, and expressing our love for God through worship.'
+			'Our site is currently under construction. If you would like to livestream our worship service or view past worship services please click the button below.'
 	};
 
 	const welcome = {
@@ -63,7 +63,7 @@
 
 <SvelteSeo {...seo} />
 <Hero {...hero} />
-<Welcome {...welcome} />
+<!-- <Welcome {...welcome} />
 <Ministry {...ministry} />
 <Faq />
-<Cta />
+<Cta /> -->

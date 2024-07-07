@@ -23,8 +23,8 @@
 					<h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">South Hills Church of Christ: A <span class="bg-clip-text text-transparent box-decoration-clone bg-gradient-to-br from-[#8B5CF6] to-[#9B4745]">Community</span> of Discipleship</h1>
 					<p class="mt-6 text-lg leading-8 text-muted-foreground sm:max-w-md lg:max-w-none">{subtext}</p>
 					<div class="mt-10 flex items-center gap-x-6">
-						<Button href="/#welcome" variant="default">Learn more</Button>
-						<Button href="/contact-us" variant="outline">Contact us</Button>
+						<Button href="https://www.youtube.com/@southhillscoc" variant="default">View services</Button>
+						<!-- <Button href="/contact-us" variant="outline">Contact us</Button> -->
 					</div>
 				</div>
 				<div
