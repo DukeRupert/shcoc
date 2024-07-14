@@ -2,7 +2,7 @@ import type { Block_Hero } from "./block_hero"
 import type { Block_Card_Group } from "./block_card_group"
 
 export interface Schema {
-    page_shcoc: Page[]
+    shcoc_page: Page[]
 }
 
 export interface Page {

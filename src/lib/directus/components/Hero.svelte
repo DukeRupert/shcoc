@@ -1,11 +1,12 @@
 <script lang="ts">
-    import { PUBLIC_DIRECTUS_ENDPOINT } from '$env/static/public';
+	import { PUBLIC_DIRECTUS_ENDPOINT } from '$env/static/public';
 	import type { Hero_Data } from '$lib/directus/types/block_hero.ts';
-    import Buttons from './Buttons.svelte';
+	import Buttons from './Buttons.svelte';
 	export let data: Hero_Data;
 
-    let from_color = '#9089fc'
-    let to_color = '#ff80b5'
+	const img_src = PUBLIC_DIRECTUS_ENDPOINT + '/assets/' + data.image;
+	let from_color = '#9089fc';
+	let to_color = '#ff80b5';
 </script>
 
 <div class="relative isolate pt-14">
@@ -28,9 +29,9 @@
 					{data.description}
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
-                    {#if data.buttons && data.buttons.length > 0}
-                        <Buttons data={data.buttons} />
-                    {/if}
+					{#if data.buttons && data.buttons.length > 0}
+						<Buttons data={data.buttons} />
+					{/if}
 				</div>
 			</div>
 			<div class="mt-16 flow-root sm:mt-24">
@@ -38,11 +39,19 @@
 					class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4"
 				>
 					<img
-						src={PUBLIC_DIRECTUS_ENDPOINT + '/assets/' + data.image}
+                        class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+						src={img_src}
+						srcset="{img_src + '?width=320'} 320w, {img_src + '?width=480'} 480w, {img_src +
+							'?width=800'} 800w, {img_src + '?width=1200'} 1200w,{img_src +
+							'?width=1600'} 1600w, {img_src + '?width=2000'} 2000w"
+						sizes="(max-width: 320px) 280px,
+                                (max-width: 480px) 440px,
+                                (max-width: 800px) 760px,
+                                (max-width: 1200px) 1000px,
+                                100vw"
 						alt={data.image || 'Fixme'}
-						width="2432"
-						height="1442"
-						class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+						width={data.image_width}
+						height={data.image_height}
 					/>
 				</div>
 			</div>

@@ -3,7 +3,7 @@
 	// import SvelteSeo from 'svelte-seo';
 	import { SITE_DATA } from '$lib/global';
 	import Hero from './(components)/hero.svelte';
-	import Blocks from '$lib/directus/components/Blocks.svelte';
+	import Blocks from '../lib/directus/components/Blocks.svelte';
 	import Welcome from './(components)/welcome.svelte';
 	import Ministry from './(components)/ministry.svelte';
 	import Faq from './(components)/faq.svelte';

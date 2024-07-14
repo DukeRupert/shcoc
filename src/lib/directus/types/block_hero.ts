@@ -1,6 +1,7 @@
 // block_hero
+import type { Button_Variants } from './button_variants'
 export interface Block_Hero {
-    collection: "block_hero"
+    collection: "shcoc_block_hero"
     item: Hero_Data 
 }
 
@@ -14,6 +15,8 @@ export interface Hero_Data {
   announcement_href?: string
   image?: string
   image_alt?: string
+  image_width?: number
+  image_height?: number
   color_primary?: string
   color_secondary?: string
 }
@@ -21,5 +24,5 @@ export interface Hero_Data {
 export interface Button {
   label: string
   href: string
-  variant: string
+  variant: Button_Variants
 }

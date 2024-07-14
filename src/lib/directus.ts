@@ -10,7 +10,7 @@ interface Page {
 }
 
 interface Schema {
-    page_shcoc: Page[]
+    shcoc_page: Page[]
 }
 
 const endpoint = PUBLIC_DIRECTUS_ENDPOINT || ''

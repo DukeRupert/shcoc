@@ -7,7 +7,7 @@
 </script>
 
 {#each data as block}
-    {#if block.collection === 'block_hero'}
+    {#if block.collection === 'shcoc_block_hero'}
         <Hero data={block.item} />
     {/if}
 {/each}
