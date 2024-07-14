@@ -1,5 +1,6 @@
 import type { Block_Hero } from "./block_hero"
 import type { Block_Card_Group } from "./block_card_group"
+import type { Block_Grid_2x2 } from "./block_grid_2x2"
 
 export interface Schema {
     shcoc_page: Page[]
@@ -21,6 +22,7 @@ export interface Page {
 
 export type Block = 
   Block_Hero |
+  Block_Grid_2x2 |
   Block_Card_Group
 
 
