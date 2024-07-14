@@ -1,11 +1,17 @@
 <script lang="ts">
-	import SvelteSeo from 'svelte-seo';
+	import type { PageData } from './$types';
+	// import SvelteSeo from 'svelte-seo';
 	import { SITE_DATA } from '$lib/global';
 	import Hero from './(components)/hero.svelte';
+	import Blocks from '$lib/directus/components/Blocks.svelte';
 	import Welcome from './(components)/welcome.svelte';
 	import Ministry from './(components)/ministry.svelte';
 	import Faq from './(components)/faq.svelte';
 	import Cta from './(components)/cta.svelte';
+
+	export let data: PageData;
+	const { page } = data;
+	console.log(page)
 
 	const seo = {
 		title: `${SITE_DATA.name}, ${SITE_DATA.address.city} ${SITE_DATA.address.state} | ${SITE_DATA.slogan}`,
@@ -61,8 +67,8 @@
 	};
 </script>
 
-<SvelteSeo {...seo} />
-<Hero {...hero} />
+<!-- <SvelteSeo {...seo} /> -->
+<Blocks data={page.blocks} />
 <!-- <Welcome {...welcome} />
 <Ministry {...ministry} />
 <Faq />
