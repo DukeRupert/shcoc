@@ -5,14 +5,14 @@
 	console.log(data);
 </script>
 
-<div id="info" class="bg-white py-24 sm:py-32">
+<div id="info" class="py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:text-center">
-			<p class="text-base font-semibold leading-7 text-indigo-600">{data.eyebrow}</p>
-			<h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+			<p class="text-base font-semibold leading-7 text-purple-600 dark:text-purple-400">{data.eyebrow}</p>
+			<h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
 				{data.headline}
 			</h1>
-			<p class="mt-6 text-lg leading-8 text-gray-600">
+			<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
 				{data.description}
 			</p>
 		</div>
@@ -22,15 +22,15 @@
 			>
 				{#each data.features as { title, description, icon, button_href, button_label }}
 					<div class="relative pl-16">
-						<dt class="text-base font-semibold leading-7 text-gray-900">
+						<dt class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-100">
 							<div
-								class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"
+								class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-600 dark:bg-purple-400"
 							>
-								<span class="material-symbols-outlined h-6 w-6 text-white"> {icon} </span>
+								<span class="material-symbols-outlined h-6 w-6 text-white dark:text-black"> {icon} </span>
 							</div>
 							{title}
 						</dt>
-						<dd class="mt-2 text-base leading-7 text-gray-600">
+						<dd class="mt-2 text-base leading-7 text-gray-600 dark:text-gray-400">
 							{description}
 						</dd>
             {#if button_label && button_href}
