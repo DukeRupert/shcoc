@@ -6,7 +6,7 @@ import { error } from '@sveltejs/kit';
 export const load = (async () => {
 	console.log('[slug] load function');
 	const path = '/';
-	const res = await client.request(readItems('shcoc_page', { fields: ['*', { blocks: [ 'collection', { item: ['*']} ]}]}));
+	const res = await client.request(readItems('shcoc_page', { fields: ['*', { blocks: [ 'collection', { item: ['*', 'logos.*']} ]}]}));
     console.log(res)
 	const page = res.find((el) => el.slug === path);
 	if (page === undefined)

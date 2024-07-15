@@ -69,7 +69,3 @@
 
 <!-- <SvelteSeo {...seo} /> -->
 <Blocks data={page.blocks} />
-<!-- <Welcome {...welcome} />
-<Ministry {...ministry} />
-<Faq />
-<Cta /> -->

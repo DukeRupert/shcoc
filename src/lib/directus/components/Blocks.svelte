@@ -2,6 +2,7 @@
     import type { Block } from "../types";
     import Hero from "./Hero.svelte";
     import FeatureGrid from "./Feature_Grid.svelte";
+    import LogoCloud from './Logo_Cloud.svelte';
 
     export let data: Block[];
 
@@ -12,6 +13,8 @@
         <Hero data={block.item} />
     {:else if block.collection === 'shcoc_block_feature_grid_2x2'}
         <FeatureGrid data={block.item} />
+    {:else if block.collection === 'shcoc_block_logo_cloud'}
+        <LogoCloud data={block.item} />
     {/if}
 {/each}
 
