@@ -7,6 +7,10 @@ import client from '$lib/directus/client';
 import { readItems } from '@directus/sdk';
 
 export const load: PageServerLoad = async () => {
+	// Server API for contact form:
+	const form = await superValidate(zod(formSchema));
+
+	// Fetch cms content
 	const path = '/contact-us';
 	const res = await client.request(
 		readItems('shcoc_page', {
@@ -14,9 +18,9 @@ export const load: PageServerLoad = async () => {
 				slug: {
 					_eq: path
 				},
-                status: {
-                    _eq: 'published'
-                }
+				status: {
+					_eq: 'published'
+				}
 			},
 			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*'] }] }]
 		})
@@ -25,21 +29,40 @@ export const load: PageServerLoad = async () => {
 		throw error(404, { message: `Page with the following slug was not found:  [ ${path} ]` });
 	const page = res[0];
 	return {
-        page,
-		form: await superValidate(zod(formSchema))
+		form,
+		page
 	};
 };
 
 export const actions: Actions = {
-	default: async (event) => {
+	default: async ( event) => {
 		const form = await superValidate(event, zod(formSchema));
+		console.log('POST', form);
+
+		// Convenient validation check:
 		if (!form.valid) {
-			return fail(400, {
-				form
-			});
+			// Again, return { form } and things will just work.
+			return fail(400, { form });
 		}
-        console.log('Fixme: Send mail')
-        console.log(form)
+
+		// Todo: Honeypot
+		// if (form.data.password !== '') {
+		// 	return fail(400, { form });
+		// }
+
+		// Send email
+		const notify = await event.fetch('/api/postmark', {
+			method: 'POST',
+			body: JSON.stringify({
+				name: form.data.name,
+				email: form.data.email,
+				tel: form.data?.tel ?? "",
+				message: form.data.message
+			})
+		});
+
+		console.log(notify)
+
 		return {
 			form
 		};

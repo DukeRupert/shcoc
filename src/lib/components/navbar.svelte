@@ -26,7 +26,7 @@
 		<div class="flex lg:flex-1">
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">{SITE_DATA.name}</span>
-				<img width="160" height="160" src={img_src + logo + '?w=160&h=160'} sizes="100vw" alt={name} class="object-contain" />
+				<img width="60" height="60" src={img_src + logo + '?w=40&h=40'} sizes="100vw" alt={name} class="max-w-12 lg:max-w-16 object-contain" />
 			</a>
 		</div>
 
