@@ -5,11 +5,12 @@
 	import Navbar from '$lib/components/navbar.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	export let data: LayoutData
+	const { site_settings } = data;
 </script>
 
 <!-- Keep an eye on light/dark mode preference -->
 <ModeWatcher />
-<Navbar />
+<Navbar {site_settings} />
 <main class="min-h-screen">
 	<slot />
 </main>

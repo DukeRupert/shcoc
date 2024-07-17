@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { CldImage } from 'svelte-cloudinary';
+	import type { Site_Settings } from '$lib/directus/types/site_settings';
+	import { PUBLIC_DIRECTUS_ENDPOINT } from '$env/static/public';
 	import { SITE_DATA } from '$lib/global';
 	import { navigating } from '$app/stores';
 	import { MenuIcon } from 'lucide-svelte';
@@ -7,6 +8,10 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Sheet from '$lib/components/ui/sheet';
 	import Lightswitch from './lightswitch.svelte';
+
+	export let site_settings: Site_Settings;
+	const { name, logo } = site_settings
+	const img_src = PUBLIC_DIRECTUS_ENDPOINT + '/assets/'
 
 	let is_mobile_open = false;
 
@@ -21,7 +26,7 @@
 		<div class="flex lg:flex-1">
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">{SITE_DATA.name}</span>
-				<CldImage width="40" height="40" src={SITE_DATA.logo.url} sizes="100vw" alt={SITE_DATA.logo.alt} class="object-contain" />
+				<img width="160" height="160" src={img_src + logo + '?w=160&h=160'} sizes="100vw" alt={name} class="object-contain" />
 			</a>
 		</div>
 
