@@ -17,7 +17,7 @@ export const load = (async ({ url }) => {
 	);
 	if (!res || res.length < 1)
 		throw error(404, {
-			message: `No page was found to match the following slug:  [ ${pathname} ]`
+			message: `Page not found.`
 		});
 	const page = res[0];
 	return {
