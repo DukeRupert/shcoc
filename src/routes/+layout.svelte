@@ -8,7 +8,7 @@
 <!-- Keep an eye on light/dark mode preference -->
 <ModeWatcher />
 <Navbar />
-<main>
+<main class="min-h-screen">
 	<slot />
 </main>
 <Footer />

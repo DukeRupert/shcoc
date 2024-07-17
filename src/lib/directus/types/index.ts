@@ -15,7 +15,9 @@ export interface Page {
   date_created: null | string
   user_updated: null | string
   date_updated: null | string
+  eyebrow?: string
   title: string
+  description?: string
   slug: string
   seo: string
   blocks: Block[]
