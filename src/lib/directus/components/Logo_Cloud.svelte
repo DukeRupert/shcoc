@@ -7,7 +7,7 @@
 	const transforms = '?height=48';
 </script>
 
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-white dark:bg-slate-500 py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<h2 class="text-center text-lg font-semibold leading-8 text-gray-900">{data.headline}</h2>
 		<div
@@ -19,7 +19,7 @@
 						class="col-span-2 max-h-12 w-full object-contain"
 						src={endpoint + image + transforms}
 						alt={name}
-						width="158"
+						width="158"bg-white
 						height="48"
 					/></a
 				>

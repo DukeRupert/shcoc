@@ -4,7 +4,6 @@
 	import Blocks from '$lib/directus/components/Blocks.svelte';
 
 	export let data: PageData;
-	console.log(data)
 	const { site_settings, page } = data;
 	const { seo, blocks } = page;
 </script>
