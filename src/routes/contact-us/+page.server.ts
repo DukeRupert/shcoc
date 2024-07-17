@@ -13,9 +13,12 @@ export const load: PageServerLoad = async () => {
 			filter: {
 				slug: {
 					_eq: path
-				}
+				},
+                status: {
+                    _eq: 'published'
+                }
 			},
-			fields: ['*', { blocks: ['collection', { item: ['*'] }] }]
+			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*'] }] }]
 		})
 	);
 	if (!res || res.length < 1)

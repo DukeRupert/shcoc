@@ -10,9 +10,12 @@ export const load = (async ({ url }) => {
 			filter: {
 				slug: {
 					_eq: pathname
-				}
+				},
+                status: {
+                    _eq: 'published'
+                }
 			},
-			fields: ['*', { blocks: ['collection', { item: ['*', 'logos.*'] }] }]
+			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*', 'logos.*'] }] }]
 		})
 	);
 	if (!res || res.length < 1)
