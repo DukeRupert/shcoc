@@ -3,10 +3,9 @@
 	import type { Hero_Data } from '$lib/directus/types/block_hero.ts';
 	import Buttons from './Buttons.svelte';
 	export let data: Hero_Data;
-
-	const img_src = PUBLIC_DIRECTUS_ENDPOINT + '/assets/' + data.image;
-	let from_color = '#9089fc';
-	let to_color = '#ff80b5';
+	const { headline, description, buttons, image } = data;
+	const { id, description: alt, height, width } = image
+	const img_src = PUBLIC_DIRECTUS_ENDPOINT + '/assets/' + id;
 </script>
 
 <div class="relative isolate pt-14">
@@ -23,14 +22,14 @@
 		<div class="mx-auto max-w-7xl px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl text-center">
 				<h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
-					{data.headline}
+					{headline}
 				</h1>
 				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
-					{data.description}
+					{description}
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
-					{#if data.buttons && data.buttons.length > 0}
-						<Buttons data={data.buttons} />
+					{#if buttons && buttons.length > 0}
+						<Buttons data={buttons} />
 					{/if}
 				</div>
 			</div>
@@ -49,9 +48,9 @@
                                 (max-width: 800px) 760px,
                                 (max-width: 1200px) 1000px,
                                 100vw"
-						alt={data.image || 'Fixme'}
-						width={data.image_width}
-						height={data.image_height}
+						alt={ alt || 'Fixme'}
+						width={width}
+						height={height}
 					/>
 				</div>
 			</div>
@@ -62,7 +61,7 @@
 		aria-hidden="true"
 	>
 		<div
-			class={`relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[${from_color}] to-[${to_color}] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]`}
+			class={`relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#9089fc] to-[#ff80b5] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]`}
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
 		></div>
 	</div>

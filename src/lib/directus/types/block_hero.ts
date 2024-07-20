@@ -13,16 +13,18 @@ export interface Hero_Data {
   announcement?: boolean
   announcement_label?: string
   announcement_href?: string
-  image?: string
-  image_alt?: string
-  image_width?: number
-  image_height?: number
-  color_primary?: string
-  color_secondary?: string
+  image: Image
 }
 
 export interface Button {
   label: string
   href: string
   variant: Button_Variants
+}
+
+export interface Image {
+  id: string
+  description: string
+  height: string
+  width: string
 }

@@ -13,7 +13,7 @@ export const load = (async () => {
 					_eq: path
 				}
 			},
-			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*', 'logos.*'] }] }]
+			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*', 'logos.*', { image: ['id', 'description', 'height', 'width']}] }] }]
 		})
 	);
 	if (!res || res.length < 1)
