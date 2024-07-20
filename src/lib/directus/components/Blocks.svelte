@@ -1,8 +1,9 @@
 <script lang="ts">
-    import type { Block } from "../types";
+    import type { Block } from "../types/page";
     import Hero from "./Hero.svelte";
     import FeatureGrid from "./Feature_Grid.svelte";
     import LogoCloud from './Logo_Cloud.svelte';
+    import RichText from "./RichText.svelte";
 
     export let data: Block[];
 
@@ -15,6 +16,8 @@
         <FeatureGrid data={block.item} />
     {:else if block.collection === 'shcoc_block_logo_cloud'}
         <LogoCloud data={block.item} />
+    {:else if block.collection === 'shcoc_block_richtext'}
+        <RichText data={block.item} />
     {/if}
 {/each}
 

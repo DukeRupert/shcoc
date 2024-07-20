@@ -6,6 +6,7 @@
 
 	export let data: PageData;
 	const { page } = data;
+	// console.log(page)
 </script>
 
 <Page_Header eyebrow={page?.eyebrow ?? ''} title={page.title} description={page?.description ?? ''}>

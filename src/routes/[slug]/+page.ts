@@ -15,7 +15,7 @@ export const load = (async ({ url }) => {
                     _eq: 'published'
                 }
 			},
-			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*', 'logos.*'] }] }]
+			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*', 'logos.*', 'image.*'] }] }]
 		})
 	);
 	if (!res || res.length < 1)
