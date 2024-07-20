@@ -22,7 +22,7 @@ export const load: PageServerLoad = async () => {
 					_eq: 'published'
 				}
 			},
-			fields: ['*', 'seo.*', { blocks: ['collection', { item: ['*'] }] }]
+			fields: ['*', { seo: ['*', { og_image: ['id', 'description', 'height', 'width']}]}, { blocks: ['collection', { item: ['*'] }] }]
 		})
 	);
 	if (!res || res.length < 1)

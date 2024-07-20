@@ -7,18 +7,12 @@
 	// const transforms = '?height=48';
 </script>
 
-<div class="bg-white py-24 dark:bg-slate-500 sm:py-32">
+<div class="py-24 sm:py-32">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto prose lg:prose-xl">
+		<div class="mx-auto prose lg:prose-xl dark:prose-invert">
 			{#if content}
 				{@html content}
 			{/if}
 		</div>
 	</div>
 </div>
-
-<style>
-	img {
-		border-radius: 16px;
-	}
-</style>
