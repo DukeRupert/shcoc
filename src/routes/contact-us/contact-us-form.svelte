@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
@@ -15,7 +14,15 @@
 		onUpdated({ form }) {
 			if (form.message) {
 				// Display the message using a toast library
-				toast(form.message.text);
+				switch (form.message.type) {
+					case 'error':
+						toast.error(form.message.text)			
+						break;
+					case 'success':
+						toast.success(form.message.text)
+					default:
+						toast.info(form.message.text)
+				}
 			}
 		}
 	});
@@ -23,7 +30,6 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<!-- <Button on:click={() => toast("Hello world")}>Show toast</Button> -->
 <form class="mx-auto mt-16 max-w-xl sm:mt-20" method="POST" use:enhance>
 	<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 		<div class="sm:col-span-2">
@@ -52,6 +58,14 @@
 				</Form.Control>
 				<Form.FieldErrors />
 			</Form.Field>
+		</div>
+		<div class="sm:col-span-2 hidden">
+			<label for="password">password</label>
+			<input name="password" type="password" />
+		</div>
+		<div class="sm:col-span-2 hidden">
+			<label for="username">username</label>
+			<input name="username" type="text" />
 		</div>
 		<div class="sm:col-span-2">
 			<Form.Field {form} name="message">

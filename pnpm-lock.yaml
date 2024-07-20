@@ -102,9 +102,6 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.6.7(postcss-load-config@5.0.3(jiti@1.21.0)(postcss@8.4.36))(postcss@8.4.36)(svelte@4.2.18)
-      sveltekit-flash-message:
-        specifier: ^2.4.4
-        version: 2.4.4(@sveltejs/kit@2.5.4(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18)
       tailwindcss:
         specifier: ^3.3.6
         version: 3.4.1
@@ -1862,12 +1859,6 @@ packages:
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
     engines: {node: '>=16'}
-
-  sveltekit-flash-message@2.4.4:
-    resolution: {integrity: sha512-CFN03chH/FMEJcBZ/8zKm7RqGee/pwb57Spbbx8QCQPhe7N9ofZHd9iYV2vVy4E9glBo/oQ1IG7VQje6L092wg==}
-    peerDependencies:
-      '@sveltejs/kit': 1.x || 2.x
-      svelte: 3.x || 4.x || >=5.0.0-next.51
 
   sveltekit-superforms@2.10.5:
     resolution: {integrity: sha512-V4gDMIdudxCNyg1hwgAIdzK0Z5y+wwgpQhaaAX4ZB06DbxMWDQFA4PnLvbvJNxQzkFD6k8sSbAJvvQZQy9IhIw==}
@@ -3749,11 +3740,6 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.8
       periscopic: 3.1.0
-
-  sveltekit-flash-message@2.4.4(@sveltejs/kit@2.5.4(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18):
-    dependencies:
-      '@sveltejs/kit': 2.5.4(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18)(vite@5.1.6)
-      svelte: 4.2.18
 
   sveltekit-superforms@2.10.5(@sveltejs/kit@2.5.4(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.18)(vite@5.1.6))(svelte@4.2.18)(vite@5.1.6))(@types/json-schema@7.0.15)(esbuild-runner@2.2.2(esbuild@0.19.12))(esbuild@0.19.12)(svelte@4.2.18):
     dependencies:

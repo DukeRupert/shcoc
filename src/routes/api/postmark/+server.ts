@@ -15,8 +15,6 @@ export const POST: RequestHandler = async ({ request }) => {
 	const date = timestamp.toLocaleDateString('en-US');
 	const model = { ...data, org_name, site_name, date };
 
-	return json({success: true})
-
 	// Send message
 	const res = await client.sendEmailWithTemplate({
 		TemplateId: template_id,

@@ -11,7 +11,7 @@
 
 <!-- Keep an eye on light/dark mode preference -->
 <ModeWatcher />
-<Toaster />
+<Toaster richColors />
 <Navbar {site_settings} />
 <main class="min-h-screen">
 	<slot />

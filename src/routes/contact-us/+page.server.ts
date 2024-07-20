@@ -39,8 +39,6 @@ export const actions: Actions = {
 		const form = await superValidate(event, zod(formSchema));
 		console.log('POST', form);
 
-		return message(form, { type: 'error', text: 'invalid form'})
-
 		// Convenient validation check:
 		if (!form.valid) {
 			// Again, return { form } and things will just work.
@@ -48,9 +46,9 @@ export const actions: Actions = {
 		}
 
 		// Todo: Honeypot
-		// if (form.data.password !== '') {
-		// 	return fail(400, { form });
-		// }
+		if (form.data.password !== '' || form.data.username !== '') {
+			return message(form, { type: 'error', text: "Nice try bot" });
+		}
 
 		// Send email
 		const notify = await event.fetch('/api/postmark', {
@@ -63,14 +61,10 @@ export const actions: Actions = {
 			})
 		});
 
-		console.log(notify)
-
 		if(notify.ok) {
 			throw redirect(301, '/success');
 		}
 
-		return {
-			form
-		};
+		return message(form, { type: 'error', text: notify.statusText})
 	}
 };
