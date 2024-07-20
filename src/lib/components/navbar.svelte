@@ -10,8 +10,9 @@
 	import Lightswitch from './lightswitch.svelte';
 
 	export let site_settings: Site_Settings;
-	const { name, logo } = site_settings
+	const { name, logo, telephone } = site_settings
 	const img_src = PUBLIC_DIRECTUS_ENDPOINT + '/assets/'
+	const streaming_link = site_settings.socials.find((el) => el.name === 'youtube')?.url || ''
 
 	let is_mobile_open = false;
 
@@ -19,6 +20,7 @@
 	$: if ($navigating) {
 		is_mobile_open = false; // Close mobile menu when navigation
 	}
+
 </script>
 
 <header class="absolute inset-x-0 top-0 z-50">
@@ -76,8 +78,11 @@
 							</div>
 							<Separator />
 							<div class="flex flex-col sm:flex-row sm:space-x-6">
-								<Button variant="default" href="/donate" class="w-full mt-4">Donate</Button>
-								<Button variant="secondary" href="/watch" class="w-full mt-4">Watch</Button>
+								{#if streaming_link}
+									<Button variant="default" href={streaming_link} target="_blank" class="w-full mt-4">Watch</Button>
+								{/if}
+								<Button variant="outline" href="/donate" class="w-full mt-4">Donate</Button>
+								
 							</div>
 						</div>
 					</Sheet.Content>
