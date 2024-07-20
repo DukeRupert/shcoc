@@ -1,6 +1,6 @@
 import type { PageServerLoad, Actions } from './$types.js';
-import { fail, error } from '@sveltejs/kit';
-import { superValidate } from 'sveltekit-superforms';
+import { fail, error, redirect } from '@sveltejs/kit';
+import { message, superValidate } from 'sveltekit-superforms';
 import { formSchema } from './schema';
 import { zod } from 'sveltekit-superforms/adapters';
 import client from '$lib/directus/client';
@@ -39,6 +39,8 @@ export const actions: Actions = {
 		const form = await superValidate(event, zod(formSchema));
 		console.log('POST', form);
 
+		return message(form, { type: 'error', text: 'invalid form'})
+
 		// Convenient validation check:
 		if (!form.valid) {
 			// Again, return { form } and things will just work.
@@ -62,6 +64,10 @@ export const actions: Actions = {
 		});
 
 		console.log(notify)
+
+		if(notify.ok) {
+			throw redirect(301, '/success');
+		}
 
 		return {
 			form

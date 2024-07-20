@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { Button } from "$lib/components/ui/button";
 	import * as Form from '$lib/components/ui/form';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
+	import { toast } from 'svelte-sonner';
 	import { formSchema, type FormSchema } from './schema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
@@ -9,12 +11,19 @@
 	export let data: SuperValidated<Infer<FormSchema>>;
 
 	const form = superForm(data, {
-		validators: zodClient(formSchema)
+		validators: zodClient(formSchema),
+		onUpdated({ form }) {
+			if (form.message) {
+				// Display the message using a toast library
+				toast(form.message.text);
+			}
+		}
 	});
 
 	const { form: formData, enhance } = form;
 </script>
 
+<!-- <Button on:click={() => toast("Hello world")}>Show toast</Button> -->
 <form class="mx-auto mt-16 max-w-xl sm:mt-20" method="POST" use:enhance>
 	<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 		<div class="sm:col-span-2">

@@ -15,6 +15,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	const date = timestamp.toLocaleDateString('en-US');
 	const model = { ...data, org_name, site_name, date };
 
+	return json({success: true})
+
 	// Send message
 	const res = await client.sendEmailWithTemplate({
 		TemplateId: template_id,
@@ -26,14 +28,16 @@ export const POST: RequestHandler = async ({ request }) => {
 	});
 
 	// Handle error
-	if (!res.ErrorCode == 0) {
+	if (res.ErrorCode == 0) {
+		// let me know
 		await client.sendEmail({
 			From: from,
 			To: from,
 			Subject: site_name + 'contact form error',
 			TextBody: JSON.stringify(res)
 		});
+		// let application know
         throw error(501, { message: 'Something went wrong. Please try calling us instead.'})
 	}
-	return json({ success: true }, { status: 200 });
+	return json({ success: true });
 };
