@@ -1,10 +1,7 @@
 <script lang="ts">
-	// import { PUBLIC_DIRECTUS_ENDPOINT } from '$env/static/public';
 	import type { RichText } from '../types/block_richtext';
 	export let data: RichText;
 	const { content } = data;
-	// const endpoint = PUBLIC_DIRECTUS_ENDPOINT + '/assets/';
-	// const transforms = '?height=48';
 </script>
 
 <div class="py-24 sm:py-32">

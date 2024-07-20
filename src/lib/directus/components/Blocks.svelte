@@ -4,6 +4,7 @@
     import FeatureGrid from "./Feature_Grid.svelte";
     import LogoCloud from './Logo_Cloud.svelte';
     import RichText from "./RichText.svelte";
+    import Team from "./Team.svelte";
 
     export let data: Block[];
 
@@ -18,6 +19,8 @@
         <LogoCloud data={block.item} />
     {:else if block.collection === 'shcoc_block_richtext'}
         <RichText data={block.item} />
+    {:else if block.collection === 'shcoc_block_team'}
+        <Team data={block.item} />
     {/if}
 {/each}
 

@@ -15,7 +15,7 @@ export const load = (async ({ url }) => {
                     _eq: 'published'
                 }
 			},
-			fields: ['*', { seo: ['*', { og_image: ['id', 'description', 'height', 'width']}]}, { blocks: ['collection', { item: ['*', 'logos.*', 'image.*'] }] }]
+			fields: ['*', { seo: ['*', { og_image: ['id', 'description', 'height', 'width']}]}, { blocks: ['collection', { item: ['*', 'logos.*', 'image.*', 'members.*'] }] }]
 		})
 	);
 	if (!res || res.length < 1)
