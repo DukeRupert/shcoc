@@ -26,7 +26,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	});
 
 	// Handle error
-	if (res.ErrorCode == 0) {
+	if (res.ErrorCode !== 0) {
 		// let me know
 		await client.sendEmail({
 			From: from,
@@ -35,7 +35,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			TextBody: JSON.stringify(res)
 		});
 		// let application know
-        throw error(501, { message: 'Something went wrong. Please try calling us instead.'})
+		throw error(501, { message: 'Something went wrong. Please try calling us instead.' });
 	}
 	return json({ success: true });
 };
