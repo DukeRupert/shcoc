@@ -1,1 +1,0 @@
-export type Button_Variants = 'default' | 'secondary' | 'destructive' | 'ghost' | 'link'

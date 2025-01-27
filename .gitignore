@@ -1,17 +1,23 @@
-.DS_Store
 node_modules
-/build
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
 /.svelte-kit
-/.vercel_build_output
-/package
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
 .env
 .env.*
 !.env.example
-.vercel
+!.env.test
 
-# Sentry Config File
-.sentryclirc
-
-# Sentry Config File
-.sentryclirc
-.env*.local
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
