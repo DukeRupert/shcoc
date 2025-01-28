@@ -1,6 +1,4 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-
   interface StaffMember {
     name: string;
     title: string;
