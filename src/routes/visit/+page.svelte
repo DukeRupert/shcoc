@@ -16,7 +16,7 @@
 			<p class="mb-6 text-lg text-gray-600">
 				Join us every Sunday for Bible Class at 9:30am and Worship at 10:30am.
 			</p>
-			<p class="text-lg text-gray-600">Everyone welcome! Join us when you are in Helena, MT!</p>
+			<p class="text-lg text-gray-600"><strong>For families – we <em>love</em> to hear the sounds of children and babies!</strong> Everyone is welcome! Join us when you are in Helena, MT!</p>
 		</div>
 	</div>
 
