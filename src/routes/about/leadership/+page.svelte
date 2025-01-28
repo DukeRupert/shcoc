@@ -1,163 +1,161 @@
 <script lang="ts">
-  interface StaffMember {
-    name: string;
-    title: string;
-    image: string;
-    bio: string;
-    contact?: {
-      email?: string;
-      phone?: string;
-      hours?: string;
-    };
-  }
-
   interface Leader {
-    names: string;
-    image: string;
+    name: string;
     role?: string;
+    email?: string;
+    bio?: string;
+    image?: string;
   }
 
-  // Sample data - Replace with actual data
-  const staffMembers: StaffMember[] = [
+  const staff: Leader[] = [
     {
       name: "Lance Love",
-      title: "Minister",
+      role: "Lead Minister",
+      email: "lance@southillscoc.org",
       image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg",
-      bio: "Lance Love, formerly of Moline, TX",
-      contact: {
-        email: "lancelove@gmail.com",
-        hours: "Mon-Thurs, 10-5, by appointment"
-      }
-    }
-    // Add other staff members...
-  ];
-
-  const shepherds: Leader[] = [
+      bio: "Lance will be coming on staff in the summer of 2021. Lance and Dorrie have been serving in Moline, AL and bring much experience to South Hills along with hearts for service. Lance will be focusing on developing strong families within our community and will also be ministering to us as he leads our Sunday morning worship experience.\n\nLance and Dorrie love the outdoors whether that is hiking, fishing or hunting with black powder. They are excited to be by their daughter and son-in-law who live in Missoula but very excited to be by their two grandchildren. They also have family in Texas and look forward to visiting the grandkids there as well.",
+    },
     {
-      names: "Bob & Pam Alfred",
-      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg"
-    }
-  ];
-
-  const deacons: Leader[] = [
-    {
-      names: "Chante Williams",
+      name: "Chante' Williams",
+      role: "Secretary",
       image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png"
     }
   ];
+
+  const elders: Leader[] = [
+    { name: "Shaun Peterson" },
+    { name: "Randy Yaeger" },
+    { name: "John Kilpatrick" },
+    { name: "Tom Anderson" },
+    { name: "Terry Chaney" }
+  ];
+
+  const deacons: Leader[] = [
+    { name: "Logan Williams", role: "IT" },
+    { name: "Chiranjeevi Allada", role: "Finance" }
+  ];
 </script>
 
-{#snippet staffCard(member: StaffMember)}
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
-    <div class="relative h-64 lg:h-auto overflow-hidden rounded-lg">
-      <img 
-        src={member.image} 
-        alt={member.name}
-        class="w-full h-full object-cover"
-      />
-    </div>
-    <div>
-      <h3 class="text-2xl font-semibold text-gray-900 mb-4">{member.name}, {member.title}</h3>
-      <div class="prose prose-lg text-gray-600">
-        <p>{member.bio}</p>
-        {#if member.contact}
-          <div class="mt-4">
-            {#if member.contact.hours}
-              <p><strong>Office hours:</strong> {member.contact.hours}</p>
-            {/if}
-            {#if member.contact.email}
-              <p><strong>Email:</strong> <a href="mailto:{member.contact.email}">{member.contact.email}</a></p>
-            {/if}
-            {#if member.contact.phone}
-              <p><strong>Phone:</strong> {member.contact.phone}</p>
-            {/if}
-          </div>
+{#snippet staffCard(leader: Leader)}
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white rounded-2xl shadow-lg overflow-hidden p-6">
+    {#if leader.image}
+      <div class="relative h-80 overflow-hidden rounded-lg">
+        <img 
+          src={leader.image} 
+          alt={leader.name}
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
+    {:else}
+      <div class="relative h-80 overflow-hidden rounded-lg bg-violet-100 flex items-center justify-center">
+        <span class="text-violet-400 text-4xl">
+          {leader.name.split(' ').map(n => n[0]).join('')}
+        </span>
+      </div>
+    {/if}
+    <div class="flex flex-col space-y-4">
+      <div>
+        <h3 class="text-2xl font-semibold text-gray-900">{leader.name}</h3>
+        {#if leader.role}
+          <p class="text-lg text-violet-600">{leader.role}</p>
         {/if}
       </div>
-    </div>
-  </div>
-{/snippet}
-
-{#snippet leaderCard(leader: Leader)}
-  <div class="flex flex-col">
-    <img 
-      src={leader.image} 
-      alt={leader.names}
-      class="w-full aspect-[8/7] object-cover rounded-lg"
-    />
-    <div class="mt-4 text-center">
-      <h3 class="text-lg font-semibold text-gray-900">{leader.names}</h3>
-      {#if leader.role}
-        <p class="text-sm text-gray-600">{leader.role}</p>
+      {#if leader.bio}
+        <div class="prose prose-lg text-gray-600">
+          {#each leader.bio.split('\n\n') as paragraph}
+            <p>{paragraph}</p>
+          {/each}
+        </div>
+      {/if}
+      {#if leader.email}
+        <p class="text-gray-600">
+          <a href="mailto:{leader.email}" class="text-violet-600 hover:text-violet-700">
+            {leader.email}
+          </a>
+        </p>
       {/if}
     </div>
   </div>
 {/snippet}
 
+{#snippet leaderCard(leader: Leader)}
+  <div class="bg-white rounded-lg p-4 text-center">
+    <h3 class="text-lg font-semibold text-gray-900">{leader.name}</h3>
+    {#if leader.role}
+      <p class="text-sm text-violet-600">{leader.role}</p>
+    {/if}
+  </div>
+{/snippet}
+
 <div class="bg-white">
-  <!-- Page Header -->
-  <div class="relative bg-white py-12">
+  <!-- Page Header with Mission & Vision -->
+  <div class="relative bg-white py-12 sm:py-16 lg:py-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="flex flex-col space-y-4">
-        <div class="flex items-center space-x-2 text-sm text-gray-600">
-          <a href="/about" class="hover:text-violet-600">About</a>
-          <span> &nbsp; ›  &nbsp;</span>
-          <a href="/about/leadership" class="hover:text-violet-600">Leadership</a>
+      <!-- Breadcrumbs -->
+      <div class="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+        <a href="/about" class="hover:text-violet-600">About</a>
+        <span>&nbsp; › &nbsp;</span>
+        <a href="/about/leadership" class="hover:text-violet-600">Leadership</a>
+      </div>
+
+      <h1 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl mb-16">
+        Leadership
+      </h1>
+
+      <!-- Mission & Vision Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-violet-50 rounded-2xl p-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">Mission</h2>
+          <p class="text-lg text-gray-600">
+            We will be a people defined by our personal discipleship to Jesus, our committed 
+            fellowship with one another, and our heartfelt gathered worship.
+          </p>
         </div>
-        <h1 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Leadership</h1>
+        <div class="bg-violet-50 rounded-2xl p-8">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">Vision</h2>
+          <p class="text-lg text-gray-600">
+            We will strive to be a community with a clear plan in our organization, ministries, 
+            events and staffing to intentionally develop disciples, create fellowship, and 
+            enrich worship.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Quick Links -->
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8">
-    <p class="text-lg text-gray-600 mb-4">Skip to...</p>
-    <div class="flex flex-wrap gap-4">
-      <a href="#staff" class="px-4 py-2 rounded-md bg-violet-600 text-white hover:bg-violet-700 transition-colors">
-        Staff
-      </a>
-      <a href="#shepherds" class="px-4 py-2 rounded-md bg-violet-600 text-white hover:bg-violet-700 transition-colors">
-        Shepherds
-      </a>
-      <a href="#deacons" class="px-4 py-2 rounded-md bg-violet-600 text-white hover:bg-violet-700 transition-colors">
-        Deacons
-      </a>
-    </div>
-  </div>
-
   <!-- Staff Section -->
-  <section id="staff" class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-8">Church Staff</h2>
-    <div class="space-y-12">
-      {#each staffMembers as member}
-        {@render staffCard(member)}
-      {/each}
+  <section class="py-16 bg-violet-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-12">Our Staff</h2>
+      <div class="space-y-8">
+        {#each staff as member}
+          {@render staffCard(member)}
+        {/each}
+      </div>
     </div>
   </section>
 
-  <!-- Shepherds Section -->
-  <section id="shepherds" class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Shepherds</h2>
-    <p class="text-lg text-gray-600 mb-8">
-      The men below are serving as Shepherds with the invaluable support and partnership of their wives.
-    </p>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {#each shepherds as shepherd}
-        {@render leaderCard(shepherd)}
-      {/each}
+  <!-- Elders Section -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-8">Elders</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {#each elders as elder}
+          {@render leaderCard(elder)}
+        {/each}
+      </div>
     </div>
   </section>
 
   <!-- Deacons Section -->
-  <section id="deacons" class="mx-auto max-w-7xl px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Deacons</h2>
-    <p class="text-lg text-gray-600 mb-8">
-      The men below are serving as Deacons with the invaluable support and partnership of their wives.
-    </p>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {#each deacons as deacon}
-        {@render leaderCard(deacon)}
-      {/each}
+  <section class="py-16 bg-violet-50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-8">Deacons</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {#each deacons as deacon}
+          {@render leaderCard(deacon)}
+        {/each}
+      </div>
     </div>
   </section>
 </div>
