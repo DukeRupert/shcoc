@@ -22,12 +22,12 @@
   // Sample data - Replace with actual data
   const staffMembers: StaffMember[] = [
     {
-      name: "Matt Burleson",
-      title: "Evangelist",
-      image: "matt-image-url",
-      bio: "Matt Burleson grew up attending Churches of Christ in North Alabama...",
+      name: "Lance Love",
+      title: "Minister",
+      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg",
+      bio: "Lance Love, formerly of Moline, TX",
       contact: {
-        email: "hackburleson@yahoo.com",
+        email: "lancelove@gmail.com",
         hours: "Mon-Thurs, 10-5, by appointment"
       }
     }
@@ -37,17 +37,15 @@
   const shepherds: Leader[] = [
     {
       names: "Bob & Pam Alfred",
-      image: "/path-to-image.jpg"
+      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg"
     }
-    // Add other shepherds...
   ];
 
   const deacons: Leader[] = [
     {
-      names: "Logan Williams",
-      image: "/path-to-image.jpg"
+      names: "Chante Williams",
+      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png"
     }
-    // Add other shepherds...
   ];
 </script>
 

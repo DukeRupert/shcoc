@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
 
   interface Ministry {
     title: string;
@@ -8,26 +7,22 @@
     href: string;
   }
 
-  type MinistryCardSnippet = Snippet<[string, string, string, string]>;
-
   const learningMinistries: Ministry[] = [
     {
       title: "Sunday Bible Class",
       description: "Conveniently scheduled at 9:30am before our main service, join us for Bible study and discussion!",
-      imageUrl: "path-to-image.jpg",
+      imageUrl: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png",
       href: "/ministries/sunday-bible-class"
     },
-    // Add other learning ministries...
   ];
 
   const communityMinistries: Ministry[] = [
     {
       title: "Life Groups",
       description: "Small groups of believers who gather regularly to spend time building relationships and studying scripture. Come see what community can look like!",
-      imageUrl: "path-to-image.jpg",
+      imageUrl: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg",
       href: "/ministries/life-groups"
     },
-    // Add other community ministries...
   ];
 </script>
 
@@ -101,7 +96,7 @@
         {@render ministryCard(
           "Annual Clothing Giveaway",
           "Every fall we host a free clothing giveaway, fueled by donations from our loving church family.",
-          "path-to-image.jpg",
+          "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg",
           "/ministries/clothing-our-community"
         )}
       </div>
