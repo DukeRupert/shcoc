@@ -1,10 +1,57 @@
 <!-- src/routes/contact/+page.svelte -->
+<script lang="ts">
+	import { page } from '$app/state';
+	import SuperDebug, { superForm } from 'sveltekit-superforms';
+
+	let { data } = $props();
+	const { form, errors, constraints, message, enhance } = superForm(data.form);
+</script>
+
+<!-- Message Component -->
+{#if $message}
+	<div
+		class="fixed right-4 top-4 z-50 rounded-md p-4 shadow-lg {page.status === 200
+			? 'bg-green-50 text-green-700'
+			: 'bg-red-50 text-red-700'}"
+		role="alert"
+	>
+		<div class="flex">
+			<div class="flex-shrink-0">
+				{#if page.status === 200}
+					<!-- Success Icon -->
+					<svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+						<path
+							fill-rule="evenodd"
+							d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				{:else}
+					<!-- Error Icon -->
+					<svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+						<path
+							fill-rule="evenodd"
+							d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				{/if}
+			</div>
+			<div class="ml-3">
+				<p class="text-sm font-medium">
+					{$message}
+				</p>
+			</div>
+		</div>
+	</div>
+{/if}
+
 <div class="relative isolate bg-white">
 	<div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
 		<!-- Contact Information Section -->
 		<div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
 			<div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-				<!-- Decorative background pattern -->
+				<!-- Decorative background element -->
 				<div
 					class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2"
 				>
@@ -34,7 +81,6 @@
 					visit us during open hours, or call us.
 				</p>
 
-				<!-- Contact Details -->
 				<dl class="mt-10 space-y-4 text-base text-gray-600">
 					<!-- Visit Us -->
 					<div class="space-y-4 border-b border-gray-100 pb-4">
@@ -133,8 +179,14 @@
 		</div>
 
 		<!-- Contact Form Section -->
-		<form method="POST" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+		<form method="POST" use:enhance class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
 			<div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+				{#if $message}
+					<div class="mb-6 rounded-md bg-violet-50 p-4 text-violet-700">
+						{$message}
+					</div>
+				{/if}
+
 				<div class="grid grid-cols-1 gap-y-6">
 					<!-- Name -->
 					<div>
@@ -142,12 +194,16 @@
 						<div class="mt-2.5">
 							<input
 								type="text"
-								name="name"
 								id="name"
-								maxlength="50"
-								required
+								name="name"
+								bind:value={$form.name}
+								aria-invalid={$errors.name ? 'true' : undefined}
+								{...$constraints.name}
 								class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6"
 							/>
+							{#if $errors.name}
+								<p class="mt-1 text-sm text-red-600">{$errors.name}</p>
+							{/if}
 						</div>
 					</div>
 
@@ -157,12 +213,16 @@
 						<div class="mt-2.5">
 							<input
 								type="email"
-								name="email"
 								id="email"
-								maxlength="50"
-								required
+								name="email"
+								bind:value={$form.email}
+								aria-invalid={$errors.email ? 'true' : undefined}
+								{...$constraints.email}
 								class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6"
 							/>
+							{#if $errors.email}
+								<p class="mt-1 text-sm text-red-600">{$errors.email}</p>
+							{/if}
 						</div>
 					</div>
 
@@ -174,11 +234,16 @@
 						<div class="mt-2.5">
 							<input
 								type="tel"
-								name="tel"
 								id="tel"
-								maxlength="50"
+								name="tel"
+								bind:value={$form.tel}
+								aria-invalid={$errors.tel ? 'true' : undefined}
+								{...$constraints.tel}
 								class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6"
 							/>
+							{#if $errors.tel}
+								<p class="mt-1 text-sm text-red-600">{$errors.tel}</p>
+							{/if}
 						</div>
 					</div>
 
@@ -189,14 +254,17 @@
 						</label>
 						<div class="mt-2.5">
 							<textarea
-								name="message"
 								id="message"
+								name="message"
 								rows="4"
-								minlength="40"
-								maxlength="500"
-								required
+								bind:value={$form.message}
+								aria-invalid={$errors.message ? 'true' : undefined}
+								{...$constraints.message}
 								class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-violet-600 sm:text-sm sm:leading-6"
 							></textarea>
+							{#if $errors.message}
+								<p class="mt-1 text-sm text-red-600">{$errors.message}</p>
+							{/if}
 						</div>
 					</div>
 				</div>
@@ -213,3 +281,6 @@
 		</form>
 	</div>
 </div>
+
+<!-- For development only -->
+<SuperDebug data={$form} />
