@@ -17,20 +17,19 @@
 				<h1
 					class="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl"
 				>
-					We are a family of imperfect <span class="text-violet-600">Jesus-followers</span>
+				Growing Together <span class="text-violet-600">in Faith</span>
 				</h1>
 
 				<div class="mt-6 space-y-6">
 					<p class="text-xl leading-relaxed text-gray-600 sm:text-2xl">
-						We read the Bible and <span class="font-semibold text-violet-600">it changes us</span>.<br
+						Where we reveal <span class="font-semibold text-violet-600">God's love</span>,<br
 						/>
-						We <span class="font-semibold text-violet-600">love God</span> and we love each other.<br
+						renew lives, and <span class="font-semibold text-violet-600">rejoice together</span>.<br
 						/>
-						We love you, <span class="font-semibold text-violet-600">as God loves you</span>.
 					</p>
 
 					<p class="text-lg text-gray-600 sm:text-xl">
-						Find the beauty and joy that God can bring to your life. Come discover Him with us!
+						Join us Sundays at 9:30 AM for Bible Class and 10:30 AM for Worship
 					</p>
 
 					<div class="mt-10 flex items-center gap-x-6">
