@@ -1,4 +1,8 @@
 <script lang="ts">
+
+  const siteName = "South Hills Church of Christ";
+  const siteUrl = "https://southhillscoc.org";
+
   interface Belief {
     title: string;
     content: string;
@@ -93,3 +97,117 @@
     </a>
   </div>
 </div>
+
+<svelte:head>
+  <!-- Essential Meta Tags -->
+  <title>Our Beliefs & Doctrine | South Hills Church of Christ - Helena, MT</title>
+  <meta name="description" content="Discover our Bible-based beliefs at South Hills Church of Christ. An independent, non-denominational church focused on Scripture and building relationships with God." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`${siteUrl}/about/doctrine`} />
+  <meta property="og:title" content="Biblical Beliefs & Teachings - South Hills Church of Christ" />
+  <meta property="og:description" content="Learn about our foundational beliefs in God, Scripture, and Christian living. Join our Compass class to explore what a life with Christ looks like." />
+  <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={`${siteUrl}/about/doctrine`} />
+  <meta name="twitter:title" content="Biblical Beliefs & Teachings - South Hills Church of Christ" />
+  <meta name="twitter:description" content="Learn about our foundational beliefs in God, Scripture, and Christian living. Join our Compass class to explore what a life with Christ looks like." />
+  <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+  
+  <!-- Additional Meta Information -->
+  <meta name="keywords" content="bible based church helena, christian beliefs montana, church doctrine helena, compass class, biblical teaching, churches of christ beliefs" />
+  
+  <!-- Church Beliefs Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "South Hills Church of Christ",
+      "url": "${siteUrl}/about/doctrine",
+      "image": "${siteUrl}/og-image.jpg",
+      "description": "An independent, Bible-based church seeking unity through Scripture.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2294 Deerfield Ln",
+        "addressLocality": "Helena",
+        "addressRegion": "MT",
+        "postalCode": "59601",
+        "addressCountry": "US"
+      },
+      "beliefs": [
+        {
+          "@type": "CreativeWork",
+          "name": "God",
+          "description": "One God existing in three persons (Father, Son and Holy Spirit), creator of all things",
+          "citation": "Genesis 1:31"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "The Bible",
+          "description": "God's inspired and authoritative word, pointing us to Jesus",
+          "citation": "2 Timothy 3:16-17, 2 Peter 1:20-21"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "Compass Class",
+        "description": "Introductory class exploring Christian life and beliefs",
+        "availability": "https://schema.org/InStock"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Church Type",
+          "value": "Independent, non-denominational"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Teaching Approach",
+          "value": "Bible-based, Scripture-focused"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Mission Focus",
+          "value": "Unity through Biblical teaching"
+        }
+      ],
+      "knowsAbout": [
+        "Biblical Studies",
+        "Christian Doctrine",
+        "Spiritual Formation",
+        "Christian Living"
+      ]
+    }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "${siteUrl}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "${siteUrl}/about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Doctrine",
+          "item": "${siteUrl}/about/doctrine"
+        }
+      ]
+    }
+  </script>
+</svelte:head>

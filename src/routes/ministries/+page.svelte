@@ -1,4 +1,8 @@
 <script lang="ts">
+
+  const siteName = "South Hills Church of Christ";
+  const siteUrl = "https://southhillscoc.org";
+
   interface Ministry {
     title: string;
     description: string;
@@ -139,3 +143,114 @@
     </div>
   </section>
 </div>
+
+<svelte:head>
+  <!-- Essential Meta Tags -->
+  <title>Church Ministries | South Hills Church of Christ Helena, MT</title>
+  <meta name="description" content="Join our diverse ministries in Helena - Women's & Men's groups, Youth programs, Children's ministry, Local & Global outreach, and Celebrate Recovery. Growing together in faith and service." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`${siteUrl}/ministries`} />
+  <meta property="og:title" content="Ministry Programs at South Hills Church of Christ" />
+  <meta property="og:description" content="Discover our ministry programs in Helena, MT. From Bible studies to community service, youth programs to recovery support - find your place to grow and serve." />
+  <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={`${siteUrl}/ministries`} />
+  <meta name="twitter:title" content="Ministry Programs at South Hills Church of Christ" />
+  <meta name="twitter:description" content="Discover our ministry programs in Helena, MT. From Bible studies to community service, youth programs to recovery support - find your place to grow and serve." />
+  <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+  
+  <!-- Additional Meta Information -->
+  <meta name="keywords" content="church ministries helena, youth ministry montana, celebrate recovery helena, women's ministry, men's ministry, children's church, community service helena" />
+  
+  <!-- Organization Schema with Programs -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "South Hills Church of Christ",
+      "image": "${siteUrl}/og-image.jpg",
+      "description": "A welcoming church community offering diverse ministries for spiritual growth and community service in Helena, Montana.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2294 Deerfield Ln",
+        "addressLocality": "Helena",
+        "addressRegion": "MT",
+        "postalCode": "59601",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.570233,
+        "longitude": -111.9714227
+      },
+      "url": "${siteUrl}/ministries",
+      "telephone": "+14064428950",
+      "programSchedule": [
+        {
+          "@type": "Event",
+          "name": "Men's Bible Study",
+          "description": "Weekly men's ministry gathering for Bible study and discussion",
+          "startDate": "T07:00",
+          "dayOfWeek": "Tuesday",
+          "location": {
+            "@type": "Place",
+            "name": "South Hills Church of Christ"
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "Children's Church",
+          "description": "Age-appropriate worship and Bible learning for children",
+          "startDate": "T10:30",
+          "dayOfWeek": "Sunday",
+          "location": {
+            "@type": "Place",
+            "name": "South Hills Church of Christ"
+          }
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Women's Ministry",
+          "description": "Bible study and fellowship for women",
+          "category": "Growth & Fellowship"
+        },
+        {
+          "@type": "Offer",
+          "name": "Youth Ministry",
+          "description": "Faith development for middle and high school students",
+          "category": "Next Generation"
+        },
+        {
+          "@type": "Offer",
+          "name": "Children's Ministry",
+          "description": "Age-appropriate worship and learning for children",
+          "category": "Next Generation"
+        },
+        {
+          "@type": "Offer",
+          "name": "Celebrate Recovery",
+          "description": "Faith-based recovery and support program",
+          "category": "Service & Support"
+        },
+        {
+          "@type": "Offer",
+          "name": "Local Service",
+          "description": "Community partnerships and outreach programs in Helena",
+          "category": "Service & Support"
+        },
+        {
+          "@type": "Offer",
+          "name": "Global Missions",
+          "description": "Supporting mission work in Amman, Jordan",
+          "category": "Service & Support"
+        }
+      ]
+    }
+  </script>
+</svelte:head>
