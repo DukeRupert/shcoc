@@ -1,95 +1,13 @@
 <!-- src/routes/visit/+page.svelte -->
 <script>
-	const siteName = "South Hills Church of Christ";
-	const siteUrl = "https://southhillscoc.org";
-  </script>
-  
-  <svelte:head>
-	<!-- Essential Meta Tags -->
-	<title>Visit Us | Sunday Services at South Hills Church of Christ in Helena, MT</title>
-	<meta name="description" content="Join us Sundays for Bible Class (9:30 AM) and Worship (10:30 AM). Experience a cappella singing, communion, Bible-based teaching, and warm fellowship. Family-friendly, children welcome!" />
-	
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content={`${siteUrl}/visit`} />
-	<meta property="og:title" content="Visit South Hills Church of Christ - What to Expect" />
-	<meta property="og:description" content="Join our Sunday services in Helena, MT. Featuring a cappella worship, communion, and Bible teaching in a welcoming environment. Bible Class 9:30 AM, Worship 10:30 AM." />
-	<meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
-	
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content={`${siteUrl}/visit`} />
-	<meta name="twitter:title" content="Visit South Hills Church of Christ - What to Expect" />
-	<meta name="twitter:description" content="Join our Sunday services in Helena, MT. Featuring a cappella worship, communion, and Bible teaching in a welcoming environment. Bible Class 9:30 AM, Worship 10:30 AM." />
-	<meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
-	
-	<!-- Additional Meta Information -->
-	<meta name="keywords" content="church service helena, sunday worship montana, family friendly church helena, a cappella worship, bible study helena" />
-	
-	<!-- Service Times Schema -->
-	<script type="application/ld+json">
-	  {
-		"@context": "https://schema.org",
-		"@type": "Church",
-		"name": "South Hills Church of Christ",
-		"image": "${siteUrl}/og-image.jpg",
-		"description": "A non-denominational church focused on Revealing God, Renewing Lives, and Rejoicing Together. Features a cappella worship, communion, and Bible-based teaching.",
-		"address": {
-		  "@type": "PostalAddress",
-		  "streetAddress": "2294 Deerfield Ln",
-		  "addressLocality": "Helena",
-		  "addressRegion": "MT",
-		  "postalCode": "59601",
-		  "addressCountry": "US"
-		},
-		"geo": {
-		  "@type": "GeoCoordinates",
-		  "latitude": 46.570233,
-		  "longitude": -111.9714227
-		},
-		"url": "${siteUrl}/visit",
-		"telephone": "+14064428950",
-		"openingHoursSpecification": [
-		  {
-			"@type": "OpeningHoursSpecification",
-			"dayOfWeek": "Sunday",
-			"opens": "09:30",
-			"closes": "10:15",
-			"name": "Bible Class"
-		  },
-		  {
-			"@type": "OpeningHoursSpecification",
-			"dayOfWeek": "Sunday",
-			"opens": "10:30",
-			"closes": "11:30",
-			"name": "Worship Service"
-		  }
-		],
-		"additionalProperty": [
-		  {
-			"@type": "PropertyValue",
-			"name": "Worship Style",
-			"value": "A cappella singing"
-		  },
-		  {
-			"@type": "PropertyValue",
-			"name": "Family Friendly",
-			"value": "Yes - Children welcome"
-		  },
-		  {
-			"@type": "PropertyValue",
-			"name": "Service Components",
-			"value": "Singing, Lord's Supper, Biblical sermon, Fellowship"
-		  }
-		]
-	  }
-	</script>
-  </svelte:head>
-  
+	const siteName = 'South Hills Church of Christ';
+	const siteUrl = 'https://southhillscoc.org';
+</script>
+
 <div class="bg-white">
 	<!-- Page Header -->
 	<div class="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
-		<h1 class="text-4xl font-semibold text-violet-800 sm:text-5xl">Visit Us</h1>
+		<h1 class="text-4xl font-semibold text-gray-900 sm:text-5xl">Visit Us</h1>
 	</div>
 
 	<!-- Welcome Section -->
@@ -102,7 +20,10 @@
 			<p class="mb-6 text-lg text-gray-600">
 				Join us every Sunday for Bible Class at 9:30am and Worship at 10:30am.
 			</p>
-			<p class="text-lg text-gray-600"><strong>For families – we <em>love</em> to hear the sounds of children and babies!</strong> Everyone is welcome! Join us when you are in Helena, MT!</p>
+			<p class="text-lg text-gray-600">
+				<strong>For families – we <em>love</em> to hear the sounds of children and babies!</strong> Everyone
+				is welcome! Join us when you are in Helena, MT!
+			</p>
 		</div>
 	</div>
 
@@ -198,7 +119,8 @@
 		<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
 			<h2 class="mb-4 text-3xl font-semibold">Safety and Security</h2>
 			<p class="mb-6 text-lg">
-				Your safety is important to us. Our team works diligently to maintain a secure environment during services, with special attention to protecting our children and families.
+				Your safety is important to us. Our team works diligently to maintain a secure environment
+				during services, with special attention to protecting our children and families.
 			</p>
 		</div>
 	</div>
@@ -231,3 +153,97 @@
 		</div>
 	</div>
 </div>
+
+<svelte:head>
+	<!-- Essential Meta Tags -->
+	<title>Visit Us | Sunday Services at South Hills Church of Christ in Helena, MT</title>
+	<meta
+		name="description"
+		content="Join us Sundays for Bible Class (9:30 AM) and Worship (10:30 AM). Experience a cappella singing, communion, Bible-based teaching, and warm fellowship. Family-friendly, children welcome!"
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={`${siteUrl}/visit`} />
+	<meta property="og:title" content="Visit South Hills Church of Christ - What to Expect" />
+	<meta
+		property="og:description"
+		content="Join our Sunday services in Helena, MT. Featuring a cappella worship, communion, and Bible teaching in a welcoming environment. Bible Class 9:30 AM, Worship 10:30 AM."
+	/>
+	<meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={`${siteUrl}/visit`} />
+	<meta name="twitter:title" content="Visit South Hills Church of Christ - What to Expect" />
+	<meta
+		name="twitter:description"
+		content="Join our Sunday services in Helena, MT. Featuring a cappella worship, communion, and Bible teaching in a welcoming environment. Bible Class 9:30 AM, Worship 10:30 AM."
+	/>
+	<meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+
+	<!-- Additional Meta Information -->
+	<meta
+		name="keywords"
+		content="church service helena, sunday worship montana, family friendly church helena, a cappella worship, bible study helena"
+	/>
+
+	<!-- Service Times Schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Church",
+			"name": "South Hills Church of Christ",
+			"image": "${siteUrl}/og-image.jpg",
+			"description": "A non-denominational church focused on Revealing God, Renewing Lives, and Rejoicing Together. Features a cappella worship, communion, and Bible-based teaching.",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "2294 Deerfield Ln",
+				"addressLocality": "Helena",
+				"addressRegion": "MT",
+				"postalCode": "59601",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 46.570233,
+				"longitude": -111.9714227
+			},
+			"url": "${siteUrl}/visit",
+			"telephone": "+14064428950",
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Sunday",
+					"opens": "09:30",
+					"closes": "10:15",
+					"name": "Bible Class"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Sunday",
+					"opens": "10:30",
+					"closes": "11:30",
+					"name": "Worship Service"
+				}
+			],
+			"additionalProperty": [
+				{
+					"@type": "PropertyValue",
+					"name": "Worship Style",
+					"value": "A cappella singing"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Family Friendly",
+					"value": "Yes - Children welcome"
+				},
+				{
+					"@type": "PropertyValue",
+					"name": "Service Components",
+					"value": "Singing, Lord's Supper, Biblical sermon, Fellowship"
+				}
+			]
+		}
+	</script>
+</svelte:head>
