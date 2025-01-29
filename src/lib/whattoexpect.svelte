@@ -47,7 +47,7 @@
 
 		<!-- Right Image Column -->
 		<div class="relative h-64 lg:h-auto">
-			<img src={imageUrl} alt="Church gathering" class="h-full w-full object-cover" />
+			<img loading="lazy" src={imageUrl} alt="Church gathering" class="h-full w-full object-cover" />
 			<!-- Optional overlay for better text contrast if needed -->
 			<div class="absolute inset-0 bg-gray-900/10"></div>
 		</div>

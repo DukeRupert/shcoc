@@ -48,6 +48,7 @@
           src={leader.image} 
           alt={leader.name}
           class="h-full w-full object-cover object-center"
+          loading="lazy"
         />
       </div>
     {:else}

@@ -32,6 +32,7 @@
         src={belief.image} 
         alt={belief.title}
         class="h-full w-full object-cover"
+        loading="lazy"
       />
       <h3 class="absolute bottom-6 left-6 text-3xl font-semibold text-white">
         {belief.title}

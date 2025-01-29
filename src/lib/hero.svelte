@@ -1,6 +1,6 @@
 <script>
 	const heroImage =
-		'https://res.cloudinary.com/rr-wholesale/image/upload/v1710183605/South%20Hills%20CoC/DSC_1346_vxtuk0.jpg';
+		'https://res.cloudinary.com/rr-wholesale/image/upload/f_auto,q_auto/w_800/v1/South%20Hills%20CoC/DSC_1346_vxtuk0';
 </script>
 
 <div class="relative isolate overflow-hidden bg-gradient-to-b from-violet-100/20 pt-14">
