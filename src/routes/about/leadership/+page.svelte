@@ -15,28 +15,31 @@
     {
       name: "Lance Love",
       role: "Lead Minister",
-      email: "lance@southillscoc.org",
+      email: "lancewlove@gmail.com",
       image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183596/South%20Hills%20CoC/lance-love_w85tff.jpg",
       bio: "Lance will be coming on staff in the summer of 2021. Lance and Dorrie have been serving in Moline, AL and bring much experience to South Hills along with hearts for service. Lance will be focusing on developing strong families within our community and will also be ministering to us as he leads our Sunday morning worship experience.\n\nLance and Dorrie love the outdoors whether that is hiking, fishing or hunting with black powder. They are excited to be by their daughter and son-in-law who live in Missoula but very excited to be by their two grandchildren. They also have family in Texas and look forward to visiting the grandkids there as well.",
     },
     {
       name: "Chante' Williams",
       role: "Secretary",
-      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png"
+      email: "southhillschurchofchrist@gmail.com",
+      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png",
+      bio: "Chanté brings warmth and organizational expertise to her role as Administrative Assistant at South Hills Church of Christ, where she coordinates the many moving pieces that keep our church community thriving. Beyond managing the day-to-day operations, she shares her musical gifts as one of our worship leaders, helping guide our congregation in praise. Her heart for ministry and service was cultivated through years of diverse experience, including a background in veterinary medicine and foster care ministry. A Montana native with a BA in Ministry from Anderson Seminary, Chanté is currently pursuing her Master's degree in Christian Counseling, further deepening her ability to serve others. Her combination of practical skills and deep faith make her an invaluable part of our church family."
     }
   ];
 
   const elders: Leader[] = [
-    { name: "Shaun Peterson" },
-    { name: "Randy Yaeger" },
-    { name: "John Kilpatrick" },
-    { name: "Tom Anderson" },
-    { name: "Terry Chaney" }
+    { name: "Shaun & Ade Peterson",
+      image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151651/South%20Hills%20CoC/ggutnaxxu8k6ltkzgu56.png"
+    },
+    { name: "Randy & Donna Yaeger", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151648/South%20Hills%20CoC/vpfkde7nbifsyhi7dakb.png" },
+    { name: "John & Debbie Kilpatrick", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151649/South%20Hills%20CoC/urqt14wvsvdofdkdrt3r.png" },
+    { name: "Allan & Diane Steinle", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151648/South%20Hills%20CoC/vpfkde7nbifsyhi7dakb.png" },
   ];
 
   const deacons: Leader[] = [
-    { name: "Logan Williams", role: "IT" },
-    { name: "Chiranjeevi Allada", role: "Finance" }
+    { name: "Logan Williams", role: "IT", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/l7ks4pdsgkt5p5dmtlar.png" },
+    { name: "Chiranjeevi Allada", role: "Finance", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/b0giz6xnbsyewsz37tid.png" }
   ];
 </script>
 
@@ -85,6 +88,15 @@
 
 {#snippet leaderCard(leader: Leader)}
   <div class="bg-white rounded-lg p-4 text-center">
+    {#if leader.image}
+      <figure>
+        <img
+          src={leader.image}
+          alt="{leader.name}'s photo"
+          class="w-80 h-64 rounded-lg mx-auto mb-3 object-cover"
+        />
+      </figure>
+    {/if}
     <h3 class="text-lg font-semibold text-gray-900">{leader.name}</h3>
     {#if leader.role}
       <p class="text-sm text-violet-600">{leader.role}</p>
@@ -143,8 +155,8 @@
   <!-- Elders Section -->
   <section class="py-16">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <h2 class="text-3xl font-semibold text-gray-900 mb-8">Elders</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-8">Shepherds</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each elders as elder}
           {@render leaderCard(elder)}
         {/each}
@@ -156,7 +168,7 @@
   <section class="py-16 bg-violet-50">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <h2 class="text-3xl font-semibold text-gray-900 mb-8">Deacons</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each deacons as deacon}
           {@render leaderCard(deacon)}
         {/each}

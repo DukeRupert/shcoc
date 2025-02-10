@@ -23,8 +23,14 @@
 			{ label: 'Visit Us', href: '/visit' },
 			{ label: 'Service Times', href: '/visit#times' },
 			{ label: 'What to Expect', href: '/visit#what-to-expect' },
-			{ label: 'Watch Online', href: 'https://www.youtube.com/@southhillscoc' }
-		],
+			{ label: 'Watch Online', href: 'https://www.youtube.com/@southhillscoc' },
+		   { 
+            label: 'Online Giving', 
+            href: 'https://secure.myvanco.com/YKAN/home',
+            target: '_blank',
+            rel: 'noopener noreferrer'
+        }
+    ],
 		ministries: [
 			{ label: 'All Ministries', href: '/ministries' },
 			{ label: "Women's Ministry", href: '/ministries#womens' },
@@ -90,7 +96,8 @@
 						<ul role="list" class="mt-6 space-y-4">
 							{#each footerLinks.about as link}
 								<li>
-									<a href={link.href} class="text-sm text-gray-600 hover:text-violet-600">
+									<a href={link.href} target={link.target} 
+    rel={link.rel} class="text-sm text-gray-600 hover:text-violet-600">
 										{link.label}
 									</a>
 								</li>
@@ -104,7 +111,8 @@
 						<ul role="list" class="mt-6 space-y-4">
 							{#each footerLinks.worship as link}
 								<li>
-									<a href={link.href} class="text-sm text-gray-600 hover:text-violet-600">
+									<a href={link.href} target={link.target} 
+    rel={link.rel} class="text-sm text-gray-600 hover:text-violet-600">
 										{link.label}
 									</a>
 								</li>
@@ -119,7 +127,8 @@
 					<ul role="list" class="mt-6 space-y-4">
 						{#each footerLinks.ministries as link}
 							<li>
-								<a href={link.href} class="text-sm text-gray-600 hover:text-violet-600">
+								<a href={link.href} target={link.target} 
+    rel={link.rel} class="text-sm text-gray-600 hover:text-violet-600">
 									{link.label}
 								</a>
 							</li>

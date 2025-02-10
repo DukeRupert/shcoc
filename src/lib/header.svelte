@@ -33,6 +33,12 @@
 				}
 			]
 		},
+    { 
+        href: 'https://secure.myvanco.com/YKAN/home', 
+        label: 'Give',
+        target: '_blank',
+        rel: 'noopener noreferrer'
+    },
 		{ href: '/contact', label: 'Contact' }
 	];
 
@@ -102,6 +108,8 @@
 			{#each navItems as item}
 				<a
 					href={item.href}
+          target={item.target}
+          rel={item.rel}
 					class="text-sm/6 font-semibold text-gray-900 transition-colors hover:text-gray-600"
 				>
 					{item.label}
@@ -167,7 +175,9 @@
 								<a
 									href={item.href}
 									class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 transition-colors hover:bg-gray-50"
-									onclick={closeMenu}
+									target={item.target}
+                  rel={item.rel}
+                  onclick={closeMenu}
 								>
 									{item.label}
 								</a>
