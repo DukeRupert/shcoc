@@ -46,7 +46,7 @@
 				zip: '59601'
 			},
 			phone: '(406) 442-8950',
-			email: 'office@southhillscoc.org',
+			email: 'southhillschurchofchrist@gmail.com',
 			times: {
 				bibleClass: 'Bible Class: 9:30 AM',
 				worship: 'Worship Service: 10:30 AM'
