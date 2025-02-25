@@ -21,7 +21,7 @@
     },
     {
       name: "Chante' Williams",
-      role: "Secretary",
+      role: "Administrative Coordinator",
       email: "southhillschurchofchrist@gmail.com",
       image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1710183607/South%20Hills%20CoC/IMG_9345_ziigc5.png",
       bio: "Chanté brings warmth and organizational expertise to her role as Administrative Assistant at South Hills Church of Christ, where she coordinates the many moving pieces that keep our church community thriving. Beyond managing the day-to-day operations, she shares her musical gifts as one of our worship leaders, helping guide our congregation in praise. Her heart for ministry and service was cultivated through years of diverse experience, including a background in veterinary medicine and foster care ministry. A Montana native with a BA in Ministry from Anderson Seminary, Chanté is currently pursuing her Master's degree in Christian Counseling, further deepening her ability to serve others. Her combination of practical skills and deep faith make her an invaluable part of our church family."
@@ -32,7 +32,7 @@
     { name: "Shaun & Ade Peterson",
       image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151651/South%20Hills%20CoC/ggutnaxxu8k6ltkzgu56.png"
     },
-    { name: "Randy & Donna Yaeger", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151648/South%20Hills%20CoC/vpfkde7nbifsyhi7dakb.png" },
+    { name: "Randy & Donna Yaeger", image: "https://res.cloudinary.com/rr-wholesale/image/upload/f_auto,q_auto/v1/South%20Hills%20CoC/uhr1ed0uum2mawtc1sgr" },
     { name: "John & Debbie Kilpatrick", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151649/South%20Hills%20CoC/urqt14wvsvdofdkdrt3r.png" },
     { name: "Allan & Diane Steinle", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151648/South%20Hills%20CoC/vpfkde7nbifsyhi7dakb.png" },
   ];
@@ -40,7 +40,8 @@
   const deacons: Leader[] = [
     { name: "Logan Williams", role: "IT", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/l7ks4pdsgkt5p5dmtlar.png" },
     { name: "Chiranjeevi Allada", role: "Finance", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/b0giz6xnbsyewsz37tid.png" }
-  ];
+  ],
+  { name: "Brian Christensen", role: "Benevolence", image "https://res.cloudinary.com/rr-wholesale/image/upload/f_auto,q_auto/v1/South%20Hills%20CoC/tedbulr5ossnm004uevg"};
 </script>
 
 {#snippet staffCard(leader: Leader)}
