@@ -39,9 +39,9 @@
 
   const deacons: Leader[] = [
     { name: "Logan Williams", role: "IT", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/l7ks4pdsgkt5p5dmtlar.png" },
-    { name: "Chiranjeevi Allada", role: "Finance", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/b0giz6xnbsyewsz37tid.png" }
+    { name: "Chiranjeevi Allada", role: "Finance", image: "https://res.cloudinary.com/rr-wholesale/image/upload/v1739151650/South%20Hills%20CoC/b0giz6xnbsyewsz37tid.png" },
+    { name: "Brian Christensen", role: "Benevolence", image "https://res.cloudinary.com/rr-wholesale/image/upload/f_auto,q_auto/v1/South%20Hills%20CoC/tedbulr5ossnm004uevg"}
   ],
-  { name: "Brian Christensen", role: "Benevolence", image "https://res.cloudinary.com/rr-wholesale/image/upload/f_auto,q_auto/v1/South%20Hills%20CoC/tedbulr5ossnm004uevg"};
 </script>
 
 {#snippet staffCard(leader: Leader)}
