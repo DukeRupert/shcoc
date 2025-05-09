@@ -1,7 +1,7 @@
 <script>
-	import Hero from '$lib/hero.svelte';
+	  import Hero from '$lib/hero.svelte';
     import Location from '$lib/location.svelte';
-	import WhatToExpect from '$lib/whattoexpect.svelte'
+	  import WhatToExpect from '$lib/whattoexpect.svelte'
 
 	const siteName = "South Hills Church of Christ";
 	const siteUrl = "https://southhillscoc.org";

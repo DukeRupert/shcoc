@@ -2,7 +2,7 @@
 	const services = [
 		{
 			name: 'Sunday Worship',
-			time: '10:00 AM - 11:30 AM'
+			time: '10:30 AM - 11:30 AM'
 		}
 	];
 
