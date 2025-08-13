@@ -1,13 +1,13 @@
 <!-- src/routes/contact/+page.svelte -->
 <script lang="ts">
 	import { page } from '$app/state';
-	import SuperDebug, { superForm } from 'sveltekit-superforms';
+	import { superForm } from 'sveltekit-superforms';
 
 	let { data } = $props();
 	const { form, errors, constraints, message, enhance } = superForm(data.form);
 
-    const siteName = "South Hills Church of Christ";
-    const siteUrl = "https://southhillscoc.org";
+	const siteName = 'South Hills Church of Christ';
+	const siteUrl = 'https://southhillscoc.org';
 </script>
 
 <!-- Message Component -->
@@ -229,6 +229,22 @@
 						</div>
 					</div>
 
+					<!-- Honeypot field - hidden from users but visible to bots -->
+					<div
+						class="honeypot"
+						style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;"
+					>
+						<label for="website">Website (leave blank)</label>
+						<input
+							type="text"
+							id="website"
+							name="website"
+							bind:value={$form.website}
+							tabindex="-1"
+							autocomplete="off"
+						/>
+					</div>
+
 					<!-- Phone (Optional) -->
 					<div>
 						<label for="tel" class="block text-sm font-semibold text-gray-900">
@@ -284,105 +300,117 @@
 		</form>
 	</div>
 </div>
-  
-  <svelte:head>
-    <!-- Essential Meta Tags -->
-    <title>Contact Us | South Hills Church of Christ - Helena, Montana</title>
-    <meta name="description" content="Connect with South Hills Church of Christ in Helena, MT. Join us for Sunday Bible Class (9:30 AM) and Worship (10:30 AM). Call (406) 442-8950 or visit us at 2294 Deerfield Ln." />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${siteUrl}/contact`} />
-    <meta property="og:title" content="Contact South Hills Church of Christ" />
-    <meta property="og:description" content="Get in touch with South Hills Church of Christ in Helena. Multiple ways to connect: visit us on Sundays, call, email, or use our contact form." />
-    <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={`${siteUrl}/contact`} />
-    <meta name="twitter:title" content="Contact South Hills Church of Christ" />
-    <meta name="twitter:description" content="Get in touch with South Hills Church of Christ in Helena. Multiple ways to connect: visit us on Sundays, call, email, or use our contact form." />
-    <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
-    
-    <!-- Additional Meta Information -->
-    <meta name="keywords" content="church helena mt, contact church helena, sunday worship times, church location helena, christian church contact" />
-    
-    <!-- Contact Information Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Church",
-        "name": "South Hills Church of Christ",
-        "image": "${siteUrl}/og-image.jpg",
-        "description": "A welcoming church community in Helena, Montana. Contact us to learn more about our services and ministries.",
-        "url": "${siteUrl}/contact",
-        "telephone": "+14064428950",
-        "email": "office@southhillscoc.org",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2294 Deerfield Ln",
-          "addressLocality": "Helena",
-          "addressRegion": "MT",
-          "postalCode": "59601",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 46.570233,
-          "longitude": -111.9714227
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Sunday",
-            "opens": "09:30",
-            "closes": "10:15",
-            "name": "Bible Class"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Sunday",
-            "opens": "10:30",
-            "closes": "11:30",
-            "name": "Worship Service"
-          }
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+1-406-442-8950",
-            "contactType": "office",
-            "email": "office@southhillscoc.org",
-            "availableLanguage": "English"
-          }
-        ],
-        "areaServed": {
-          "@type": "City",
-          "name": "Helena",
-          "sameAs": "https://en.wikipedia.org/wiki/Helena,_Montana"
-        }
-      }
-    </script>
-  
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "${siteUrl}"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Contact",
-            "item": "${siteUrl}/contact"
-          }
-        ]
-      }
-    </script>
-  </svelte:head>
+
+<svelte:head>
+	<!-- Essential Meta Tags -->
+	<title>Contact Us | South Hills Church of Christ - Helena, Montana</title>
+	<meta
+		name="description"
+		content="Connect with South Hills Church of Christ in Helena, MT. Join us for Sunday Bible Class (9:30 AM) and Worship (10:30 AM). Call (406) 442-8950 or visit us at 2294 Deerfield Ln."
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={`${siteUrl}/contact`} />
+	<meta property="og:title" content="Contact South Hills Church of Christ" />
+	<meta
+		property="og:description"
+		content="Get in touch with South Hills Church of Christ in Helena. Multiple ways to connect: visit us on Sundays, call, email, or use our contact form."
+	/>
+	<meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={`${siteUrl}/contact`} />
+	<meta name="twitter:title" content="Contact South Hills Church of Christ" />
+	<meta
+		name="twitter:description"
+		content="Get in touch with South Hills Church of Christ in Helena. Multiple ways to connect: visit us on Sundays, call, email, or use our contact form."
+	/>
+	<meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
+
+	<!-- Additional Meta Information -->
+	<meta
+		name="keywords"
+		content="church helena mt, contact church helena, sunday worship times, church location helena, christian church contact"
+	/>
+
+	<!-- Contact Information Schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Church",
+			"name": "South Hills Church of Christ",
+			"image": "${siteUrl}/og-image.jpg",
+			"description": "A welcoming church community in Helena, Montana. Contact us to learn more about our services and ministries.",
+			"url": "${siteUrl}/contact",
+			"telephone": "+14064428950",
+			"email": "office@southhillscoc.org",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "2294 Deerfield Ln",
+				"addressLocality": "Helena",
+				"addressRegion": "MT",
+				"postalCode": "59601",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 46.570233,
+				"longitude": -111.9714227
+			},
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Sunday",
+					"opens": "09:30",
+					"closes": "10:15",
+					"name": "Bible Class"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Sunday",
+					"opens": "10:30",
+					"closes": "11:30",
+					"name": "Worship Service"
+				}
+			],
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"telephone": "+1-406-442-8950",
+					"contactType": "office",
+					"email": "office@southhillscoc.org",
+					"availableLanguage": "English"
+				}
+			],
+			"areaServed": {
+				"@type": "City",
+				"name": "Helena",
+				"sameAs": "https://en.wikipedia.org/wiki/Helena,_Montana"
+			}
+		}
+	</script>
+
+	<!-- Breadcrumb Schema -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "${siteUrl}"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Contact",
+					"item": "${siteUrl}/contact"
+				}
+			]
+		}
+	</script>
+</svelte:head>

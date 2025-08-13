@@ -18,6 +18,13 @@ export const actions: Actions = {
         const form = await superValidate(event, zod(formSchema));
         console.log('POST', form);
 
+        // Check honeypot field - if filled, it's likely spam
+        if (form.data.website && form.data.website.trim() !== '') {
+            console.log('Spam detected via honeypot:', form.data);
+            // Silently reject - don't give feedback to the bot
+            return fail(400, { form });
+        }
+
         // Convenient validation check:
         if (!form.valid) {
             // Again, return { form } and things will just work.
